@@ -1,6 +1,6 @@
 # Ecommerce WebApp Using Django Framework
 
-![Logo](gitimg/1.PNG)
+
 
 A simple project based on an Online Ecommerce Site that uses Python with Django Web Framework. Following Django project contains all the important features which can be in use for the second year IT students for their college projects. It has a number of important features that will allow the users to shop online, manage orders, and more. This system as well as the website’s concept is all clear, it’s the same as real-life scenarios and well-implemented on it. 
 
@@ -27,6 +27,7 @@ Last but not least, a clean and simple dashboard is presented with various color
 - List Orders
 - Track Orders
 - Download Invoice (PDF)
+- send invoice to mail(pdf)
 - View/Update Profile
 - Order Management
 - Product Management
@@ -132,12 +133,5 @@ Please adhere to this project's `code of conduct`.
 
 
 
-
-## Authors
-- [@naemazam](https://github.com/naemazam?tab=repositories)
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
 
 
