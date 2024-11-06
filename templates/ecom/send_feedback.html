@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>BuildersMart</title>
+  <style media="screen">
+    body {
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-container {
+      max-width: 500px;
+      background-color: #fff;
+      padding: 30px;
+      margin: 30px auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h3 {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .form-style {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-style label {
+      font-weight: bold;
+      color: #444;
+    }
+
+    .form-style input[type=text],
+    .form-style input[type=email],
+    .form-style textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+
+    .form-style input[type=text]:focus,
+    .form-style input[type=email]:focus,
+    .form-style textarea:focus {
+      border-color: #4a90e2;
+      box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+      outline: none;
+    }
+
+    .form-style textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-style .submit-btn {
+      background-color: #4a90e2;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .form-style .submit-btn:hover {
+      background-color: #357abd;
+    }
+
+    .required {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+
+  <center>
+    <div class="form-container">
+      <h3 class='alert alert-success'>Send Us Your Valuable Feedback!</h3>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-style">
+          <label for="name">Name <span class="required">*</span></label>
+          {% render_field feedbackForm.name class="field-long"  %}
+          
+          <label for="feedback">Your Feedback <span class="required">*</span></label>
+          {% render_field feedbackForm.feedback id="field5" class="field-long field-textarea"  %}
+          
+          <input type="submit" value="Send Feedback" class="submit-btn" />
+        </div>
+      </form>
+    </div>
+  </center>
+
+  {% include "ecom/footer.html" %}
+</body>
+</html>

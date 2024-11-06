@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>BuildersMart - Feedback</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  
+  <style>
+    body {
+      background-color: #f7f9fc;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-container {
+      max-width: 400px;
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 30px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .form-container h3 {
+      color: #333;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: #4a90e2;
+      color: #ffffff;
+      padding: 10px;
+      font-size: 15px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #357abd;
+    }
+  </style>
+</head>
+
+<body>
+
+  {% if request.user.is_authenticated %}
+    {% include "ecom/customer_navbar.html" %}
+  {% else %}
+    {% include "ecom/navbar.html" %}
+  {% endif %}
+
+  <div class="form-container">
+    <h3 style="font-size:30px ;">Contact Us</h3>
+    
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        {{ form.as_p }}
+      </div>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+  </div>
+
+  {% include "ecom/footer.html" %}
+
+  <!-- Optional Bootstrap JS and dependencies -->
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+{% extends 'ecom/admin_base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style>
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .market-update-gd {
+      background-color: #28A745;
+      color: white;
+      padding: 2em;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+      transition: all 0.3s ease;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .market-update-gd:hover {
+      background-color: #218838;
+    }
+
+    .market-update-left h3 {
+      font-size: 2.5em;
+    }
+
+    .market-update-left h4 {
+      font-size: 1.5em;
+      margin: 0.3em 0;
+    }
+
+    .market-update-right i {
+      font-size: 3em;
+      background-color: white;
+      padding: 0.8em;
+      border-radius: 50%;
+      color: #343A40;
+    }
+
+    .container {
+      margin-top: 30px;
+    }
+
+    .table {
+      margin-top: 20px;
+    }
+
+    .table th, .table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .btn-outline-primary, .btn-outline-danger {
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+
+    .btn i {
+      margin-right: 5px;
+    }
+
+    .panel-heading {
+      background-color: #DC3545;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .panel-title {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .float {
+    position: fixed;
+    width: 90px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(45deg, #007bff, #00aaff);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .float:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+  }
+
+  .my-float {
+    margin: 8px; /* Adjusts icon position */
+  }
+
+    .btn-outline-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    .btn-outline-danger:hover {
+      background-color: #c82333;
+      border-color: #bd2130;
+    }
+
+  </style>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- Dashboard Card for Products Count -->
+<div class="container text-center">
+  <div class="col-md-4 col-md-offset-4 market-update-gd">
+    <div class="row">
+      <div class="col-xs-8 market-update-left">
+        <h3>{{ productcount }}</h3>
+        <h4 style="font-size: 35px;"><b>Products</b></h4>
+      </div>
+      <div class="col-xs-4 market-update-right">
+        <i class="fa fa-shopping-cart"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Products Table -->
+<div class="container">
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h6 class="panel-title">Total Products</h6>
+    </div>
+    <div class="panel-body">
+      <table class="table table-hover table-bordered table-striped">
+        <thead>
+          <tr class="table-primary">
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in products %}
+          {% if p %}
+          <tr>
+            <td>{{ p.name }}</td>
+            <td><img src="{% static p.product_image.url %}" alt="Product Image" height="40px" width="40px"></td>
+            <td>{{ p.price }}</td>
+            <td>{{ p.description }}</td>
+            <td>
+              <a class="btn btn-outline-primary btn-xs" href="{% url 'update-product' p.id %}" title="Edit Product">
+                <i class="fa fa-pencil"></i>
+              </a>
+              <a class="btn btn-outline-danger btn-xs" href="{% url 'delete-product' p.id %}" title="Delete Product">
+                <i class="fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="5">
+              <h3 class="text-center text-danger">No Products Available!</h3>
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Add Product Floating Button -->
+<a href="{% url 'admin-add-product' %}" class="float">
+  <i class="fa fa-plus my-float">Add</i>
+</a>
+
+{% endblock content %}

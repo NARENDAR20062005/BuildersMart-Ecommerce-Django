@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+
+
+
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+
+  {% block content %}
+  <style>
+    .success-page {
+    max-width: 400px;
+    padding: 30px;
+    margin: 100px auto;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .success-page img {
+    max-width: 80px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #28a745;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 20px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 5px;
+    transition: background-color 0.3s;
+  }
+  .btn:hover {
+    background-color: #218838;
+  }
+  .btn-secondary {
+    background-color: #6c757d;
+  }
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  </style>
+
+<div class="success-page">
+ <h3 style="color:blue;text-align:center;">Your Feedback Sent Succesfully !</h3>
+  <br>
+  <div style="text-align:center;">
+    <img src="{% static "images/success.png" %}"  style="width:100px; height:100px; ">
+  </div>
+  <a href="/my-order" class="btn">View/Track Orders</a>
+    <a href="/customer-home" class="btn btn-secondary">Continue Shopping</a>
+
+</div>
+
+
+<br><br><br><br><br><br><br><br>
+{% endblock content %}
+  {% include "ecom/footer.html" %}
+

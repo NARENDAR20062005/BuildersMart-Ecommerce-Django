@@ -1,0 +1,131 @@
+{% extends 'ecom/admin_base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style>
+    body {
+      background-color: #f7f9fc;
+    }
+
+    .market-update-gd {
+      background-color: #6C757D;
+      color: #fff;
+      padding: 2em;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .market-update-gd:hover {
+      background-color: #5a6268;
+    }
+
+    .market-update-left h3 {
+      font-size: 2.5em;
+      font-family: 'Carrois Gothic', sans-serif;
+    }
+
+    .market-update-left h4 {
+      font-size: 1.5em;
+      font-family: 'Carrois Gothic', sans-serif;
+      margin: 0.3em 0;
+    }
+
+    .market-update-right i {
+      font-size: 3em;
+      background-color: #fff;
+      padding: 0.8em;
+      border-radius: 50%;
+      color: #343A40;
+    }
+
+    .container {
+      margin-top: 30px;
+    }
+
+    .panel-title {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .table {
+      margin-top: 20px;
+    }
+
+    .table th, .table td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .btn-outline-primary, .btn-outline-danger {
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+
+    .btn i {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<!-- Dashboard Card for Customers Count -->
+<div class="container text-center">
+  <div class="col-md-4 col-md-offset-4 market-update-gd">
+    <div class="row">
+      <div class="col-xs-8 market-update-left">
+        <h3>{{ customercount }}</h3>
+        <h4 style="font-size: 35px;"><b>Customers</b></h4>
+      </div>
+      <div class="col-xs-4 market-update-right">
+        <i class="fa fa-users"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Customer Table -->
+<div class="container">
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h6 class="panel-title">Total Customers</h6>
+    </div>
+    <div class="panel-body">
+      <table class="table table-hover table-bordered table-striped" id="dev-table">
+        <thead>
+          <tr class="table-primary">
+            <th>Name</th>
+            <th>Picture</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in customers %}
+          <tr>
+            <td>{{ c.get_name }}</td>
+            <td><img src="{% static c.profile_pic.url %}" alt="Profile Pic" class="img-circle" height="40px" width="40px"></td>
+            <td>{{ c.mobile }}</td>
+            <td>{{ c.address }}</td>
+            <td>
+              <a class="btn btn-outline-primary" href="{% url 'update-customer' c.id %}" title="Edit customer">
+                <i class="fa fa-pencil"></i>
+              </a>
+              <a class="btn btn-outline-danger" href="{% url 'delete-customer' c.id %}" title="Delete customer">
+                <i class="fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
