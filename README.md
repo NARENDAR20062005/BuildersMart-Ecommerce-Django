@@ -116,10 +116,7 @@ $ python3 manage.py runserver
 
 ## Screenshots
 
-![Admin Page](gitimg/2.PNG)
-![Stuff Page](gitimg/3.PNG)
-![student Page](gitimg/4.PNG)
-![student Page](gitimg/5.PNG)
+
 
 
 
