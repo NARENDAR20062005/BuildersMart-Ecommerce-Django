@@ -116,7 +116,59 @@ $ python3 manage.py runserver
 
 ## Screenshots
 
+![Image](https://github.com/user-attachments/assets/63f43ff3-0745-424f-8841-3514b6c9a033)
 
+![Image](https://github.com/user-attachments/assets/898db0b9-f09a-4c00-9837-cb8beba30eb8)
+
+![Image](https://github.com/user-attachments/assets/cf931fe2-3428-400b-b732-462cbfd5a55e)
+
+![Image](https://github.com/user-attachments/assets/bbd8075d-d166-4b10-85df-861a6b60f141)
+
+![Image](https://github.com/user-attachments/assets/82cf25c8-9f44-4a62-8549-f52a92fe1829)
+
+![Image](https://github.com/user-attachments/assets/e295aecd-0b86-4a94-8ac3-dea259a9eac9)
+
+![Image](https://github.com/user-attachments/assets/903a73ce-761a-4ba2-bc5f-726b04364af3)
+
+![Image](https://github.com/user-attachments/assets/469a9a1b-749b-41a2-8b9e-1a7dd855f9f6)
+
+![Image](https://github.com/user-attachments/assets/db1e6575-bbed-48b0-8b42-0dd59eb14906)
+
+![Image](https://github.com/user-attachments/assets/2cfbe28f-4523-4001-a912-7e095d40e5d2)
+
+![Image](https://github.com/user-attachments/assets/5ca99679-fc21-4e1e-8589-f1e5c860712c)
+
+![Image](https://github.com/user-attachments/assets/f9b9c15b-3c68-4add-98ca-b81aad3c1ed6)
+
+![Image](https://github.com/user-attachments/assets/e783cda4-6e3a-4626-9094-2b2ebe48b713)
+
+![Image](https://github.com/user-attachments/assets/3f107b0d-4db2-453c-a830-40fb48a44358)
+
+![Image](https://github.com/user-attachments/assets/95f3f6f7-6452-4735-a3bd-1b1f0bed07a9)
+
+![Image](https://github.com/user-attachments/assets/e48cec65-bc4c-40e1-9c81-8ac2094de514)
+
+![Image](https://github.com/user-attachments/assets/87079fb5-4c2e-4b75-9608-831a8b4c2f9e)
+
+![Image](https://github.com/user-attachments/assets/a064b831-27fb-41a9-835b-0f9ee2549a60)
+
+![Image](https://github.com/user-attachments/assets/06261fae-e42a-4f9f-aaab-945da1981c26)
+
+![Image](https://github.com/user-attachments/assets/8c9ac4f3-9f65-431b-8b24-b024f7dbd7b4)
+
+![Image](https://github.com/user-attachments/assets/8be56bb1-cd00-47ce-a941-ebc07f5ae3a1)
+
+![Image](https://github.com/user-attachments/assets/6c47e3fe-ed33-45b8-878a-fb474ae7fe69)
+
+![Image](https://github.com/user-attachments/assets/8fa18410-aabb-453d-bea2-c9e105f57cdb)
+
+![Image](https://github.com/user-attachments/assets/12923f0d-eb5d-4a8a-ae3d-ee811af59ed3)
+
+![Image](https://github.com/user-attachments/assets/eb953cf9-7a59-4084-9503-fc8ff34cac8f)
+
+![Image](https://github.com/user-attachments/assets/4b5582f2-0a1d-4e0b-80e2-f51fbff063a3)
+
+![Image](https://github.com/user-attachments/assets/ab1c8ddc-ec01-4965-8e94-376b9643e3cd)
 
 
 
