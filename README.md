@@ -115,6 +115,8 @@ $ python3 manage.py runserver
 ```
 
 ## Screenshots
+USER DASHBOARD :  
+
 
 ![Image](https://github.com/user-attachments/assets/63f43ff3-0745-424f-8841-3514b6c9a033)
 
@@ -151,6 +153,11 @@ $ python3 manage.py runserver
 ![Image](https://github.com/user-attachments/assets/87079fb5-4c2e-4b75-9608-831a8b4c2f9e)
 
 ![Image](https://github.com/user-attachments/assets/a064b831-27fb-41a9-835b-0f9ee2549a60)
+
+
+
+ADMIN DASHBOARD :
+
 
 ![Image](https://github.com/user-attachments/assets/06261fae-e42a-4f9f-aaab-945da1981c26)
 
